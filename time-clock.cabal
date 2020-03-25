@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6bb3c585897835ec728eb318e0f371a7778fb9b3a7b4a8bca76c0183a577a469
+-- hash: 82fa7f2c80d6d14af28a702c95c84e6dc07b18097638a0e102e9432d2e8ada81
 
 name:           time-clock
 version:        0.1.0.0
@@ -28,6 +28,8 @@ source-repository head
 library
   exposed-modules:
       TimeClock
+      TimeClock.Internal
+      TimeClock.Types
   other-modules:
       Paths_time_clock
   hs-source-dirs:
