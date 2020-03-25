@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d69bc323994427157e8240c59caf8b680bed00fe87fda18111c6ade7aecf9d02
+-- hash: 6bb3c585897835ec728eb318e0f371a7778fb9b3a7b4a8bca76c0183a577a469
 
 name:           time-clock
 version:        0.1.0.0
@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      TimeClock
   other-modules:
       Paths_time_clock
   hs-source-dirs:
@@ -35,18 +35,8 @@ library
   ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
-  default-language: Haskell2010
-
-executable time-clock-exe
-  main-is: Main.hs
-  other-modules:
-      Paths_time_clock
-  hs-source-dirs:
-      app
-  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , time-clock
+    , chronos
+    , containers
   default-language: Haskell2010
 
 test-suite time-clock-test
@@ -59,5 +49,8 @@ test-suite time-clock-test
   ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , chronos
+    , containers
+    , hspec
     , time-clock
   default-language: Haskell2010
